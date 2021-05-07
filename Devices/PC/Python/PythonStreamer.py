@@ -19,9 +19,9 @@ def on_connect(client, userdata, flags, rc):  # The callback for when the client
 
 def on_message(client, userdata, msg):  # The callback for when a PUBLISH message is received from the server.
     print("Message received-> " + msg.topic + " " + str(msg.payload))  # Print a received msg
-    imageReading(client, str(msg.payload))
+    imageStream(client, str(msg.payload))
 
-def imageReading(client, url):
+def imageStream(client, url):
     now = time.time()
     
     while time.time() - now < 30:
